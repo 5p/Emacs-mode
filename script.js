@@ -36,66 +36,66 @@
 // Key bindings:
 // Must be ordered: SHIFT, then CTRL, then ALT, then CHARACTER
 var shortcuts = {
-	'CTRL-Q': {'h': 'Toggle Emacs-mode', 'f': function(e) { log("Hmm.. How did you get here?") } },
-	'CTRL-G': {'h': 'Cancel', 'f': function(e) { log("Hmm.. How did you get here?") } },
-	'CTRL-S': {'h': 'I-search links', 'f': function(e) { searchLinks(e, 0) } },
-	'CTRL-ALT-S': {'h': 'Regexp I-search links', 'f': function(e) { searchLinks(e, 1) } },
-	'CTRL-R': {'h': 'Reverse I-search links', 'f': function(e) { searchLinks(e, 0) } },
-	'CTRL-ALT-R': {'h': 'Reverse regexp I-search links', 'f': function(e) { searchLinks(e, 1) } },
-	'CTRL-J': {'h': 'Jump to link or form control', 'f': function(e) { jumpTo(e) } },
+	'CTRL-Q': {'h': 'Toggle Emacs-mode', 'f': function(e) { log("Hmm.. How did you get here?"); } },
+	'CTRL-G': {'h': 'Cancel', 'f': function(e) { log("Hmm.. How did you get here?"); } },
+	'CTRL-S': {'h': 'I-search links', 'f': function(e) { searchLinks(e, 0); } },
+	'CTRL-ALT-S': {'h': 'Regexp I-search links', 'f': function(e) { searchLinks(e, 1); } },
+	'CTRL-R': {'h': 'Reverse I-search links', 'f': function(e) { searchLinks(e, 0); } },
+	'CTRL-ALT-R': {'h': 'Reverse regexp I-search links', 'f': function(e) { searchLinks(e, 1); } },
+	'CTRL-J': {'h': 'Jump to link or form control', 'f': function(e) { jumpTo(e); } },
 	// native functions
-	'BACKSPACE': {'h': 'Previous page in history', 'f': function(e) { log("Hmm.. How did you get here?") } },
-	'CTRL-T': {'h': 'New tab', 'f': function(e) { chrome.extension.sendRequest({'action':'NEW_TAB'}) } },
-	'ESC': {'h': 'Remove focus from link or form control', 'f': function(e) { log("Hmm.. How did you get here?") } },
+	'BACKSPACE': {'h': 'Previous page in history', 'f': function(e) { log("Hmm.. How did you get here?"); } },
+	'CTRL-T': {'h': 'New tab', 'f': function(e) { chrome.extension.sendRequest({'action':'NEW_TAB'}); } },
+	'ESC': {'h': 'Remove focus from link or form control', 'f': function(e) { log("Hmm.. How did you get here?"); } },
 	'CTRL-X': {
-		'CTRL-C': {'h': 'Close all windows', 'f': function(e) { chrome.extension.sendRequest({'action':'CLOSE_ALL_WINDOWS'}) } },
-		'K': { 'h': 'Close current tab', 'f': function(e) { chrome.extension.sendRequest({'action':'CLOSE_TAB'}) } },
+		'CTRL-C': {'h': 'Close all windows', 'f': function(e) { chrome.extension.sendRequest({'action':'CLOSE_ALL_WINDOWS'}); } },
+		'K': { 'h': 'Close current tab', 'f': function(e) { chrome.extension.sendRequest({'action':'CLOSE_TAB'}); } },
 		'5': {
-			'0': { 'h': 'Close current window', 'f': function(e) { chrome.extension.sendRequest({'action':'CLOSE_WINDOW'}, function(r){}) } },
-			'2': {'h': 'New window', 'f': function(e) { chrome.extension.sendRequest({'action':'NEW_WINDOW'}, function(r){}) } }
+			'0': { 'h': 'Close current window', 'f': function(e) { chrome.extension.sendRequest({'action':'CLOSE_WINDOW'}, function(r){}); } },
+			'2': {'h': 'New window', 'f': function(e) { chrome.extension.sendRequest({'action':'NEW_WINDOW'}, function(r){}); } }
 		}
 	},
 	/* Scrolling in X */
 	// small scrolling
-	'N': {'h': 'Scroll down 10%', 'f': function(e) { scroll(10, 0) } },
-	'CTRL-N': {'f': function(e) { scroll(10, 0) } },
-	'P': {'h': 'Scroll up 10%', 'f': function(e) { scroll(-10, 0) } },
-	'CTRL-P': {'f': function(e) { scroll(-10, 0) } },
-	'J': {'h': 'Scroll down 10%', 'f': function(e) { scroll(10, 0) } },
-	'K': {'h': 'Scroll up 10%', 'f': function(e) { scroll(-10, 0) } },
+	'N': {'h': 'Scroll down 10%', 'f': function(e) { scroll(10, 0); } },
+	'CTRL-N': {'f': function(e) { scroll(10, 0); } },
+	'P': {'h': 'Scroll up 10%', 'f': function(e) { scroll(-10, 0); } },
+	'CTRL-P': {'f': function(e) { scroll(-10, 0); } },
+	'J': {'h': 'Scroll down 10%', 'f': function(e) { scroll(10, 0); } },
+	'K': {'h': 'Scroll up 10%', 'f': function(e) { scroll(-10, 0); } },
 	// medium scrolling
-	'ALT-E': {'h': 'Scroll down 50%', 'f': function(e) { scroll(50, 0) } },
-	'ALT-A': {'h': 'Scroll up 50%', 'f': function(e) { scroll(-50, 0) } },
+	'ALT-E': {'h': 'Scroll down 50%', 'f': function(e) { scroll(50, 0); } },
+	'ALT-A': {'h': 'Scroll up 50%', 'f': function(e) { scroll(-50, 0); } },
 	// page scrolling
-	'V': {'h': 'Scroll down 90%', 'f': function(e) { scroll(90, 0) } },
-	'CTRL-V': {'f': function(e) { scroll(90, 0) } },
-	'ALT-V': {'h': 'Scroll up 90%', 'f': function(e) { scroll(-90, 0) } },
+	'V': {'h': 'Scroll down 90%', 'f': function(e) { scroll(90, 0); } },
+	'CTRL-V': {'f': function(e) { scroll(90, 0); } },
+	'ALT-V': {'h': 'Scroll up 90%', 'f': function(e) { scroll(-90, 0); } },
 	// home and end on > and SHIFT->
-	'>': {'h': 'Scroll to end', 'f': function(e) { document.body.scrollTop = document.body.offsetHeight } },
-	'SHIFT->': {'h': 'Scroll to home', 'f': function(e) { document.body.scrollTop = 0 } },
-	'ALT->': {'f': function(e) { document.body.scrollTop = document.body.offsetHeight } },
-	'SHIFT-ALT->': {'f': function(e) { document.body.scrollTop = 0 } },
+	'>': {'h': 'Scroll to end', 'f': function(e) { document.body.scrollTop = document.body.offsetHeight; } },
+	'SHIFT->': {'h': 'Scroll to home', 'f': function(e) { document.body.scrollTop = 0; } },
+	'ALT->': {'f': function(e) { document.body.scrollTop = document.body.offsetHeight; } },
+	'SHIFT-ALT->': {'f': function(e) { document.body.scrollTop = 0; } },
 	/* Scrolling in Y */
 	// small scrolling
-	'F': {'h': 'Scroll right 10%', 'f': function(e) { scroll(10, 1) } },
-//	'CTRL-F': function(e) { scroll(10, 1) } },
-	'B': {'h': 'Scroll left 10%', 'f': function(e) { scroll(-10, 1) } },
-	'CTRL-B': {'f': function(e) { scroll(-10, 1) } },
+	'F': {'h': 'Scroll right 10%', 'f': function(e) { scroll(10, 1); } },
+//	'CTRL-F': function(e) { scroll(10, 1); } },
+	'B': {'h': 'Scroll left 10%', 'f': function(e) { scroll(-10, 1); } },
+	'CTRL-B': {'f': function(e) { scroll(-10, 1); } },
 	// large scrolling
-	'ALT-F': {'h': 'Scroll right 50%', 'f': function(e) { scroll(50, 1) } },
-	'ALT-B': {'h': 'Scroll left 50%', 'f': function(e) { scroll(-50, 1) } },
+	'ALT-F': {'h': 'Scroll right 50%', 'f': function(e) { scroll(50, 1); } },
+	'ALT-B': {'h': 'Scroll left 50%', 'f': function(e) { scroll(-50, 1); } },
 	// page scrolling
-	'E': {'h': 'Scroll right 90%', 'f': function(e) { scroll(90, 1) } },
-	'CTRL-E': {'f': function(e) { scroll(90, 1) } },
-	'A': {'h': 'Scroll left 90%', 'f': function(e) { scroll(-90, 1) } },
-	'CTRL-A': {'f': function(e) { scroll(-90, 1) } },
+	'E': {'h': 'Scroll right 90%', 'f': function(e) { scroll(90, 1); } },
+	'CTRL-E': {'f': function(e) { scroll(90, 1); } },
+	'A': {'h': 'Scroll left 90%', 'f': function(e) { scroll(-90, 1); } },
+	'CTRL-A': {'f': function(e) { scroll(-90, 1); } },
 	// help function
-	'SHIFT-+': {'h': 'Show help', 'f': function(e) { showHelp() } },
-	'CTRL-H': {'M': {'h': 'Show help', 'f': function(e) { showHelp() } } },
+	'SHIFT-+': {'h': 'Show help', 'f': function(e) { showHelp(); } },
+	'CTRL-H': {'M': {'h': 'Show help', 'f': function(e) { showHelp(); } } },
 	// eval javascript
-	'SHIFT-ALT-1': {'h': 'Evaluate JavaScript', 'f': function(e) { evalJS(e) } },
+	'SHIFT-ALT-1': {'h': 'Evaluate JavaScript', 'f': function(e) { evalJS(e); } },
 	// link to the god damn GPL
-	'CTRL-6': {'h': 'Show license for EMACS icon', 'f': function(e) { log("The EMACS icon is distributed under the <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GPv3 license</a>.") } }
+	'CTRL-6': {'h': 'Show license for EMACS icon', 'f': function(e) { log("The EMACS icon is distributed under the <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GPv3 license</a>."); } }
 };
 var inSeq = [];
 var enabled = 1;
@@ -122,7 +122,7 @@ var log = function(msg) {
 	var m = document.createElement("SPAN");
 	m.innerHTML = msg;
 	term.appendChild(m);
-}
+};
 
 var resetConsole = function(keeplog) {
 	if (!keeplog) {
@@ -135,7 +135,7 @@ var resetConsole = function(keeplog) {
 	readPress = 0;
 	readQuit = 0;
 	inSeq = [];
-}
+};
 resetConsole();
 
 
@@ -159,7 +159,7 @@ document.addEventListener("keypress", function(e) {
 // listen on keyboard events
 var keydownevent = function(e) {
 	if (e.stopPropagation) e.stopPropagation();
-	
+
 	// read input
 	var input = '';
 	if (e.shiftKey) input += 'SHIFT-';
@@ -176,7 +176,7 @@ var keydownevent = function(e) {
 	}
 	input += key;
 	//console.log("Input: "+input+" ("+e.keyCode+")");
-	
+
 	if (enabled) {
 		// cancel? esc if no elm has focus
 		if ((e.target == document.body && e.keyCode == 27) || input == "CTRL-G") {
@@ -209,7 +209,7 @@ var keydownevent = function(e) {
 			}
 		}
 	}
-	
+
 	// native keybindings
 	if (!inSeq.length) {
 		if (input == 'CTRL-Q') {
@@ -236,13 +236,13 @@ var keydownevent = function(e) {
 		// do default action
 		if (!shortcuts[input]) return;
 	}
-	
+
 	// is the plugin disabled? then do nothing
 	if (!enabled) return;
-	
+
 	// stop events
 	if (e.preventDefault) e.preventDefault();
-	
+
 	// find shortcut
 	var shortcut = shortcuts;
 	inSeq.push(input);
@@ -259,7 +259,7 @@ var keydownevent = function(e) {
 		log(inSeq.join(" ")+" is undefined");
 		resetConsole(1);
 	}
-}
+};
 document.addEventListener("keydown", keydownevent, false);
 chrome.extension.onRequest.addListener(function(req, sender, r) {
 	switch (req.action) {
@@ -279,8 +279,8 @@ var jumpTo = function(e) {
 	var data = {'elms': [], 'labels': []};
 
 	// eventlistener:
-	var _gs = function(e) { return document.defaultView.getComputedStyle(e); }
-	var _gi = function(i) { try { return i.parseInt() } catch (e) { return 0 }; }
+	var _gs = function(e) { return document.defaultView.getComputedStyle(e); };
+	var _gi = function(i) { try { return i.parseInt(); } catch (e) { return 0; }; };
 	// lets bind those items
 	data.elms = [];
 	var types = ['A','INPUT','TEXTAREA','SELECT','BUTTON'];
@@ -299,7 +299,7 @@ var jumpTo = function(e) {
 		// assign letter
 		var e = data.elms[i];
 		var gs = _gs(e);
-		e.dataset.aakext = ""
+		e.dataset.aakext = "";
 		for (var j = data.seqlen-1; j >= 0; --j) e.dataset.aakext += letters[key[j]]+(j > 0 ? "-" : "");
 		key[0]++;
 		var index = 0;
@@ -313,7 +313,7 @@ var jumpTo = function(e) {
 		var p = e.parentNode;
 		d.innerText = e.dataset.aakext;
 		d.className = 'styleReset aakextlabel';
-		
+
 		if (e.tagName == "A" || e.tagName == "BUTTON") {
 			// yay, we can put the label inside the element
 			var dd = document.createElement('SPAN');
@@ -364,7 +364,7 @@ var jumpTo = function(e) {
 			e.parentNode.removeChild(e);
 		}
 		resetConsole(1);
-	}
+	};
 	readInput = function (e) {
 		// links are activated, lets continue
 		if (e.keyCode == 8) {
@@ -390,8 +390,8 @@ var jumpTo = function(e) {
 			return;
 		}
 		return;
-	}
-}
+	};
+};
 
 var searchLinks = function(e, reg) {
 	document.body.classList.add("emacsHighlightLinks");
@@ -405,7 +405,7 @@ var searchLinks = function(e, reg) {
 		if (links.length > marked) links[marked].classList.remove("emacsHighlightLinksSelected");
 		for (var i = 0; i < links.length; i++) links[i].classList.remove("emacsHighlightLinks");
 		resetConsole();
-	}
+	};
 	readInput = function(e, input, key) {
 		if (e.keyCode == 8) { // backspace was pressed
 			if (e.stopPropagation) e.stopPropagation();
@@ -443,7 +443,8 @@ var searchLinks = function(e, reg) {
 				links[marked].classList.add("emacsHighlightLinksSelected");
 			}
 		}
-	}
+	    return null;
+	};
 	readPress = function(e, key) {
 		document.body.classList.remove("emacsHighlightLinks");
 		if (links.length > marked) links[marked].classList.remove("emacsHighlightLinksSelected");
@@ -471,15 +472,15 @@ var searchLinks = function(e, reg) {
 		marked = links.length ? marked % links.length : 0;
 		if (links.length > marked) links[marked].classList.add("emacsHighlightLinksSelected");
 		log(name+sstr+" ("+links.length+" matches)");
-	}
-}
+	};
+};
 
 
 /* Page scrolling functions */
 var scroll = function(p, d) {
 	if (d) document.body.scrollLeft = document.body.scrollLeft+(p/100)*document.body.parentNode.clientWidth;
 	else   document.body.scrollTop  = document.body.scrollTop +(p/100)*document.body.parentNode.clientHeight;
-}
+};
 
 var readHelp = function(s, pre) {
 	var h = "";
@@ -487,7 +488,7 @@ var readHelp = function(s, pre) {
 		if (s[i]['h']) h += pre+i+"\t"+s[i]['h']+"\n";
 	} else h += readHelp(s[i], pre+i+" ");
 	return h;
-}
+};
 
 var helpOn = false;
 var showHelp = function() {
@@ -513,19 +514,19 @@ var showHelp = function() {
 			helpOn = false;
 			if (helpdiv) document.body.removeChild(helpdiv);
 			resetConsole();
-		}
+		};
 		readInput = function() {
 			readQuit();
-		}
-	}
-}
+		};
+	};
+};
 
 var evalJS = function(e) {
 	log("Eval JavaScript: ");
 	var input = [];
 	readQuit = function() {
 		resetConsole(1);
-	}
+	};
 	readInput = function(e) {
 		switch (e.keyCode) {
 		case 8: // backspace
@@ -547,10 +548,9 @@ var evalJS = function(e) {
 			}
 			break;
 		}
-	}
+	};
 	readPress = function(e) {
 		input.push(String.fromCharCode(e.keyCode));
 		log("Eval JavaScript: "+input.join(""));
-	}
-}
-
+	};
+};
