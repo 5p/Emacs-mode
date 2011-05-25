@@ -1,0 +1,176 @@
+/*
+	Copyright (c) 2011 Theis Mackeprang (http://www.5p.dk/)
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in
+	all copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+	THE SOFTWARE.
+*/
+
+/* style-canceler */
+.styleReset, .styleReset * {
+	border: 0;
+	text-transform: auto;
+	text-decoration: auto;
+	font-family: Helvetica;
+	font-size: 12px;
+	line-height: 18px;
+	letter-space: auto;
+	padding: 0;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	color: black;
+	text-indent: 0;
+	box-shadow: 0;
+	min-width: auto;
+	min-height: auto;
+	height: auto;
+	width: auto;
+	position: auto;
+	left: auto;
+	top: auto;
+	right: auto;
+	bottom: auto;
+	text-align: left;
+}
+
+
+/* the console */
+div.emacsConsole {
+	position: fixed !important;
+	left: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	height: 20px !important;
+	background: black !important;
+	border-top: 1px solid #888 !important;
+	color: white !important;
+	font-family: monospace !important;
+	padding: 2px 5px !important;
+	z-index: 1200 !important;
+}
+div.emacsConsole *, div.emacsConsole a {
+	color: white !important;
+}
+div.emacsFill {
+	height: 20px !important;
+	line-height: 20px !important;
+}
+
+/* JumpTo-function */
+span.aakextparent {
+	position: relative !important;
+	display: inline;
+	min-width: 0 !important; width: 0 !important;
+	min-height: 0 !important; height: 0 !important;
+	line-height: 0 !important;
+	letter-space: 0 !important;
+	border: 0 !important;
+	box-shadow: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	text-indent: 0 !important;
+	vertical-align: top !important;
+	font-size: 0 !important;
+}
+
+span.aakextlabel {
+    position: absolute !important;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    top: auto;
+    display: inline-block !important;
+    z-index: 1100 !important;
+	min-width: 0 !important; width: auto !important;
+	min-height: 0 !important; height: auto !important;
+    padding: 2px 3px !important;
+    margin: 0;
+    border-radius: 3px !important;
+    background: #fff !important;
+    border: 1px solid #666 !important;
+    opacity: 0.95 !important;
+    font-size: 8px !important;
+    line-height: 10px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    box-shadow: 1px 1px 1px #888 !important;
+    white-space: nowrap !important;
+	text-decoration: none !important;
+}
+
+span.aakextparent > span.aakextlabel {
+	float: left !important;
+	left: 0 !important;
+	top: 0 !important;
+}
+
+*:focus {
+	outline: #f1ca7f solid 2px !important;/*
+	outline: invert solid 2px;*/
+}
+
+/* Search function */
+body.emacsHighlightLinks a, a.emacsHighlightLinks {
+	background: rgba(255,255,0,0.75) !important;
+}
+a.emacsHighlightLinksSelected {
+	background: rgba(255,128,0,0.75) !important;
+}
+
+/* Help function */
+div.emacsHelp {
+	position: fixed !important;
+	left: 20px !important;
+	top: 20px !important;
+	right: 20px !important;
+	bottom: 20px !important;
+	padding: 20px !important;
+	background: rgba(0,0,0,0.85) !important;
+	color: white !important;
+	font-family: monospace !important;
+	z-index: 1100 !important;
+	overflow: auto !important;
+	text-align: center !important;
+	border-radius: 20px;
+}
+div.emacsHelp div.tableholder {
+	-webkit-column-width: 350px !important;
+}
+div.emacsHelp h1 {
+	color: #DD0 !important;
+	border: 0 !important;
+	text-decoration: underline !important;
+	font-size: 28px !important;
+	line-height: 32px !important;
+	margin: 0 0 20px 0 !important;
+	text-align: center !important;
+}
+div.emacsHelp table, div.emacsHelp td {
+	color: white !important;
+	font-family: monospace !important;
+}
+div.emacsHelp td:first-child {
+	color: #8D0 !important;
+	text-align: right !important;
+}
+div.emacsHelp table {
+	width: 80% !important;
+}
+div.emacsHelp td {
+	text-align: left !important;
+}

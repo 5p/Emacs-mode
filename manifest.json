@@ -1,0 +1,21 @@
+{
+   "background_page": "background.html",
+   "browser_action": {
+      "default_icon": "emacs.png",
+      "default_title": "Emacs mode"
+   },
+   "content_scripts": [ {
+      "css": [ "style.css" ],
+      "js": [ "script.js" ],
+      "matches": [ "\u003Call_urls\u003E" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Emacs bindings and quick navigation with only keyboard shortcuts.",
+   "icons": {
+      "128": "icon128.png"
+   },
+   "name": "Emacs-mode-fork",
+   "permissions": [ "tabs" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.0"
+}
