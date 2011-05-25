@@ -1,5 +1,6 @@
 /*
 	Copyright (c) 2011 Theis Mackeprang (http://www.5p.dk/)
+        Copyright (c) 2011 FLorian Mounier (http://paradoxxxzero.tk/)
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
@@ -104,9 +105,10 @@ span.aakextlabel {
     background: #fff !important;
     border: 1px solid #666 !important;
     opacity: 0.95 !important;
-    font-size: 8px !important;
+    font-size: 9px !important;
+    /* Fix font for aakext; Hardly readable for me with 8px bold */
     line-height: 10px !important;
-    font-weight: bold !important;
+    font-weight: normal !important;
     text-transform: uppercase !important;
     box-shadow: 1px 1px 1px #888 !important;
     white-space: nowrap !important;
