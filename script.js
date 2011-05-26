@@ -1,5 +1,7 @@
 /*
 	Copyright (c) 2011 Theis Mackeprang (http://www.5p.dk/)
+	Copyright (c) 2011 FLorian Mounier (http://paradoxxxzero.tk/)
+
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
@@ -431,7 +433,7 @@ var searchLinks = function(e, reg) {
 				links[marked].classList.remove("emacsHighlightLinksSelected");
 				marked = (marked+1) % links.length;
 				links[marked].classList.add("emacsHighlightLinksSelected");
-                                document.body.scrollTop = document.getElementsByClassName("emacsHighlightLinksSelected")[0].offsetTop;
+                scrollTo(document.getElementsByClassName("emacsHighlightLinksSelected")[0]);
 			}
 		}
 		if (input == "CTRL-R" || input == "CTRL-ALT-R") {
@@ -442,7 +444,7 @@ var searchLinks = function(e, reg) {
 				marked = (marked-1) % links.length;
 				if (marked < 0) marked += links.length;
 				links[marked].classList.add("emacsHighlightLinksSelected");
-                                document.body.scrollTop = document.getElementsByClassName("emacsHighlightLinksSelected")[0].offsetTop;
+                scrollTo(document.getElementsByClassName("emacsHighlightLinksSelected")[0]);
 			}
 		}
 	    return null;
@@ -482,6 +484,16 @@ var searchLinks = function(e, reg) {
 var scroll = function(p, d) {
 	if (d) document.body.scrollLeft = document.body.scrollLeft+(p/100)*document.body.parentNode.clientWidth;
 	else   document.body.scrollTop  = document.body.scrollTop +(p/100)*document.body.parentNode.clientHeight;
+};
+
+var scrollTo = function(e) {
+    var margin = 50;
+    if(e.offsetTop > window.innerHeight - margin + document.body.scrollTop) {
+        document.body.scrollTop = e.offsetTop - screen.height / 2;
+    }
+    if(e.offsetTop < document.body.scrollTop) {
+        document.body.scrollTop = e.offsetTop - screen.height / 2;
+    }
 };
 
 var readHelp = function(s, pre) {
