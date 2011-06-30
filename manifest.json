@@ -1,12 +1,11 @@
-
 {
     "name": "Emacs-mode",
-    "version": "0.12",
+    "version": "0.13",
     "description": "Emacs bindings and quick navigation with only keyboard shortcuts.",
     "icons": {"128": "icon128.png"},
     "browser_action": {
-    	"default_icon": "emacs.png",
-    	"default_title": "Emacs mode"
+        "default_icon": "emacs.png",
+        "default_title": "Emacs mode"
     },
     "background_page": "background.html",
     "permissions": ["tabs"],
